@@ -1,0 +1,13 @@
+.omos {
+  margin-top: 40px;
+}
+h1 {
+  text-align: center;
+  margin-top: 40px;
+}
+.omos_grid1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 40px;
+}
