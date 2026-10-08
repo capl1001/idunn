@@ -1,0 +1,19 @@
+.inspiration {
+  margin-top: 40px;
+}
+h1 {
+  text-align: center;
+  margin-top: 40px;
+}
+.insp_grid1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 40px;
+}
+.insp_grid2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-top: 40px;
+}
