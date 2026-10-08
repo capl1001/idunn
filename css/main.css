@@ -1,6 +1,10 @@
 * {
   margin: 0;
 }
+:root {
+  --background-color: #efede5;
+  --text-color: #000;
+}
 /* Burger Menu */
 .menu {
   display: none;
@@ -67,4 +71,12 @@ nav.active .menu a {
 
 body {
   margin: 40px;
+  background-color: var(--background-color);
+}
+
+/* Design af general button */
+button {
+  background-color: white;
+  border: 1px solid black;
+  color: var(--text-color);
 }
