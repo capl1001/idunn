@@ -1,4 +1,18 @@
+@font-face {
+    font-family: inter;
+    src: url(/Fonts/Inter-VariableFont_opsz_wght.woff);
+}
+@font-face {
+    font-family: instrumentsans;
+    src: url(/Fonts/InstrumentSans-VariableFont_wdth\,wght.woff2);
+}
+*{
+    font-family: instrumentsans;
+}
 
+.produktliste h2 {
+    text-transform: uppercase;
+}
 
 #produktliste{
     margin-bottom: 1rem;
@@ -12,16 +26,25 @@
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 3;
-    gap: 1rem;
+    gap: 0.3rem;
     padding: 10px;
     text-align: center;
     transition: 0.2s ease;
     img {
         width: 100%;
         object-fit:contain;
-        
         background-color: white;
     }
+}
+
+.card h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.card p {
+    margin: 0;
+    font-size: 0.8rem;
 }
 
 a.card:hover {
