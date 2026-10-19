@@ -1,8 +1,13 @@
+// Først bestemmer vi vores endpoint
 const endpoint = "https://dummyjson.com/products?limit=0";
 
+
+// Vi benytter os af queryselector 
 const produktliste = document.querySelector("#produktliste");
 const visantal = document.querySelector("#filtre span");
 const tilbageknap = document.querySelector("#tilbageknap");
+
+// Vi opretter to variabler
 
 let alleData;
 let udsnit;
