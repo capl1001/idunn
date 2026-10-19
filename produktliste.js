@@ -8,7 +8,7 @@ let alleData;
 let udsnit;
 
 
-// Filtre
+// Filtrering
 document.querySelectorAll("#filtre button").forEach(knap => 
     knap.addEventListener("click", filtrer)
 );
