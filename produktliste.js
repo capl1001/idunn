@@ -45,6 +45,7 @@ fetch(endpoint)
     });
 
 // FUNKTIONER
+// Vi 
 
 // FILTRERING
 function filtrer(e) {
