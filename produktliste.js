@@ -101,7 +101,7 @@ function visData(json) {
                         alt="${element.title}"
                     >
                     <h2>${element.title}</h2>
-                    <p>${element.price} EUR</p>
+                    <p>${element.price} €</p>
                 </article>
             </a>
         `;
