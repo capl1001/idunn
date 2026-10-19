@@ -1,3 +1,5 @@
+
+
 #produktliste{
     margin-bottom: 1rem;
     display: grid;
@@ -5,3 +7,31 @@
     gap: 1rem;
 }
 
+
+.card{
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    gap: 1rem;
+    padding: 10px;
+    text-align: center;
+    transition: 0.2s ease;
+    img {
+        width: 100%;
+        object-fit:contain;
+        
+        background-color: white;
+    }
+}
+
+a.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 800px){
+  #produktliste {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+}
