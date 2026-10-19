@@ -1,44 +1,149 @@
+
+/* Generelt */
 body {
   margin: 0;
-  padding: 0;
+  background-color: #efeee7;
 }
-#catlistContainer {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 20px;
-  padding-top: 10rem;
 
-  a {
-    color: black;
-    text-decoration: none;
-    background-color: #fff;
-    border: 1px solid #000;
-    text-align: center;
-    padding: 0.5rem 2.5rem;
-  }
-}
-main {
+/* Hero-sektion */
+.hero {
   position: relative;
-  min-height: 100vh;
+  height: 75vh;
+  min-height: 500px;
+  overflow: hidden;
 }
 
 .forside-img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: 0;
 }
 
-h1,
-p {
-  text-align: center;
-  color: #301e10;
+/* Logo */
+.hero-logo {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  z-index: 2;
 }
-h1 {
-  font-size: 4rem;
-  padding-top: 10rem;
+
+.hero-logo h1 {
+  font-size: 6rem;
+  font-weight: 300;
+  margin: 0;
+  color: #4b3021;
+}
+
+.hero-logo p {
+  margin: 0;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* Kategoriknapper */
+#catlistContainer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+#catlistContainer a {
+  background-color: white;
+  border: 1px solid #222;
+  color: #111;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+/* Inspirationssektion */
+.inspiration {
+  background-color: #efeee7;
+  padding-top: 40px;
+  min-height: 200px;
+}
+
+.insp-forside {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.insp-forside img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.inspiration > a {
+  display: block;
+  text-align: right;
+  padding: 20px 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Tablet og desktop */
+@media (min-width: 768px) {
+  main {
+    max-width: 1100px;
+    margin: 40px auto;
+  }
+
+  .hero {
+    height: 80vh;
+    min-height: 600px;
+  }
+
+  .hero-logo {
+    top: 22%;
+    left: 20%;
+  }
+
+  .hero-logo h1 {
+    font-size: clamp(6rem, 10vw, 9rem);
+  }
+
+  .hero-logo p {
+    font-size: 1rem;
+  }
+
+  #catlistContainer {
+    bottom: 30px;
+    gap: 20px;
+  }
+
+  #catlistContainer a {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+
+  .inspiration {
+    padding-top: 80px;
+    min-height: 300px;
+  }
+
+  .insp-forside img {
+    aspect-ratio: 1 / 1;
+  }
+
+  .inspiration > a {
+    font-size: 1.2rem;
+    padding: 20px;
+  }
 }
