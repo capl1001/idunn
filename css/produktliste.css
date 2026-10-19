@@ -10,6 +10,10 @@
     font-family: instrumentsans;
 }
 
+.produktliste h2 {
+    text-transform: uppercase;
+}
+
 #produktliste{
     margin-bottom: 1rem;
     display: grid;
@@ -31,6 +35,16 @@
         object-fit:contain;
         background-color: white;
     }
+}
+
+.card h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.card p {
+    margin: 0;
+    font-size: 0.8rem;
 }
 
 a.card:hover {
