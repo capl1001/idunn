@@ -6,6 +6,7 @@ const endpoint = "https://dummyjson.com/products?limit=0";
 const produktliste = document.querySelector("#produktliste");
 const visantal = document.querySelector("#filtre span");
 const tilbageknap = document.querySelector("#tilbageknap");
+const overskrift = document.querySelector("h2");
 
 // Vi opretter to variabler
 
@@ -50,7 +51,9 @@ fetch(endpoint)
 // FILTRERING
 function filtrer(e) {
     const valgt = e.target.textContent;
-    if (valgt === "Show all") {
+
+    overskrift.textContent = valgt;
+    if (valgt === "All") {
         udsnit = alleData;
     } else if (valgt === "Furniture") {
         udsnit = alleData.filter(element => element.category === "furniture");
@@ -66,9 +69,9 @@ function filtrer(e) {
 // SORTERING
 function sorter(e) {
     const valgt = e.target.textContent;
-    if (valgt === "Pris lav-høj") {
+    if (valgt === "Price low-high") {
         udsnit.sort((a, b) => a.price - b.price);
-    } else if (valgt === "Pris høj-lav") {
+    } else if (valgt === "Price high-low") {
         udsnit.sort((a, b) => b.price - a.price);
     } else if (valgt === "A-Z") {
         udsnit.sort((a, b) => 
@@ -92,7 +95,7 @@ function visData(json) {
     json.forEach(element => {
         produktliste.innerHTML += `
             <a class="card" href="produktdetaljer.html?id=${element.id}">
-                <article class="card">
+                <article>
                     <img 
                         src="${element.thumbnail}" 
                         alt="${element.title}"
