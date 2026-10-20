@@ -1,0 +1,177 @@
+/* .accordion {
+  color: black;
+  border-bottom: 1px solid black;
+  margin: 0;
+  border-radius: 0;
+  padding: 1rem;
+}
+.accordion + .accordion {
+  border-top: 0;
+}
+summary {
+  font-weight: 300;
+  cursor: pointer;
+}
+html {
+  interpolate-size: allow-keywords;
+}
+::details-content {
+  height: 0;
+  transition: 0.5s allow-discrete;
+  overflow: hidden;
+}
+[open]::details-content {
+  height: auto;
+}
+
+@media (min-width: 800px) {
+  .product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+} */
+
+#backbutton {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+/* Produktdetalje – mobil først */
+.product-detail {
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+/* Produktbillede */
+.product-detail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Produktinformation */
+.product-info {
+  padding: 1rem 0;
+}
+
+/* Brand */
+.product-info h2 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #666;
+  margin: 0 0 0.75rem;
+}
+
+/* Produktnavn */
+.product-info h1 {
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+/* Pris */
+.product-info .price {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0 0 2rem;
+}
+
+/* Accordion-sektion */
+
+/* Accordion */
+.accordion {
+  color: black;
+  border-bottom: 1px solid #757575;
+  margin: 0;
+  border-radius: 0;
+  padding: 1rem 0;
+}
+summary::marker {
+  color: #757575;
+}
+
+.accordion + .accordion {
+  border-top: 0;
+}
+
+/* Accordion-overskrifter */
+summary {
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+}
+
+/* Indhold i accordion */
+.accordion > div {
+  padding: 0.75rem 0 0.25rem;
+}
+
+.accordion p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #555;
+  margin: 0 0 0.75rem;
+}
+
+/* Animation på accordion */
+html {
+  interpolate-size: allow-keywords;
+}
+
+::details-content {
+  height: 0;
+  transition: 0.5s allow-discrete;
+  overflow: hidden;
+}
+
+[open]::details-content {
+  height: auto;
+}
+/* Tilføj til kurv-knap */
+.add-to-cart {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: transparent;
+}
+
+/* Desktop */
+@media (min-width: 800px) {
+  .product-detail {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    padding: 3rem 4rem;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .product-info {
+    padding: 2rem 0;
+  }
+
+  .product-info h1 {
+    font-size: 2.2rem;
+  }
+
+  .product-detail img {
+    max-height: 700px;
+    object-fit: contain;
+  }
+}

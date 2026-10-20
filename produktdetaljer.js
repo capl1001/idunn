@@ -23,20 +23,43 @@ function visData(element) {
   // Vi tilføjer produktets data til vores container
   product.innerHTML += `
     <article class="product-detail">
-    <h1>${element.title}</h1>
+    <div>
     
       <img src="${element.thumbnail}" alt="${element.title}" />
-      
-      <div class="product-info">
-        <h2>${element.brand}</h2>
-        <p class="price">${element.price} $</p>
-
-      <div class="accordion">
-        <p class="description">${element.description}</p>
-        </div>
-        
-        <button class="buy-button">Add to cart</button>
       </div>
+      <div>
+      <div class="product-info">
+      ${element.brand ? `<h2>${element.brand}</h2>` : ""}
+        <h1>${element.title}</h1>
+        <p class="price">${element.price} €</p>
+
+      <article class="info">
+      <details class="accordion">
+        <summary>Specifications</summary>
+        <div> <p>Description: ${element.description}</p> 
+        ${element.dimensions ? `<p>Dimensions: ${element.dimensions.width} x ${element.dimensions.height} x ${element.dimensions.depth}</p>` : ""}
+        <p>Weight: ${element.weight}kg</p>
+        
+        </div>
+        </details>
+        <details class="accordion">
+        <summary>Shipping & Returns</summary>
+        <div> <p>${element.shippingInformation}</p> 
+        <p>${element.returnPolicy}</p>
+        
+        </div>
+
+        </details>
+        <details class="accordion">
+        <summary>Warranty & Availability</summary>
+        <div> <p>Warranty Information: ${element.warrantyInformation}</p>
+        <p>Availability: ${element.availabilityStatus}</p>
+        </div>
+        </details>
+      </article>
+</div>
+
+      <button class="add-to-cart">Add to cart</button>
     </article>
   `;
 }
