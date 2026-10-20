@@ -4,7 +4,7 @@ const endpoints = ["https://dummyjson.com/products/category/furniture", "https:/
 // Vi vælger containeren til kategorierne
 const catlistContainer = document.querySelector("#catlistContainer");
 
-// Vi fetcher data fra de tre endpoints og viser dem som links
+// Vi fetcher data fra de tre endpoints
 endpoints.forEach((endpoint) => {
   fetch(endpoint)
     .then((res) => res.json())
