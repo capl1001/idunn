@@ -1,0 +1,119 @@
+.return-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.return-page h1 {
+  font-size: 2rem;
+  /* font-weight: 400; */
+  margin-bottom: 2rem;
+}
+
+.return-page section {
+  margin-bottom: 2rem;
+}
+
+.return-page h2 {
+  font-size: 1.2rem;
+  /* font-weight: 400; */
+  margin-bottom: 0.75rem;
+}
+
+.return-page p {
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.contact-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background-color: transparent;
+}
+
+.contact-popover {
+  width: calc(100% - 2rem);
+  max-width: 480px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 1px solid #757575;
+  padding: 1.5rem;
+  background-color: var(--background-color);
+  color: black;
+}
+
+.contact-popover::backdrop {
+  background: rgb(0 0 0 / 40%);
+}
+
+.popover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.popover-header h2 {
+  margin: 0;
+}
+
+.close-btn {
+  border: none;
+  background: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #222;
+}
+
+.contact-popover form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-popover label {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.contact-popover input,
+.contact-popover textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8rem;
+  border: 1px solid #c9c6c0;
+  background: white;
+}
+
+.contact-popover textarea {
+  resize: vertical;
+}
+
+.contact-popover form .contact-btn {
+  margin-top: 1rem;
+}
+.required {
+  color: red;
+}
+
+@media (min-width: 800px) {
+  .return-page {
+    padding: 4rem 2rem;
+  }
+
+  .return-page h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-popover {
+    padding: 2rem;
+  }
+}
