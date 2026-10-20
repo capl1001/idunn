@@ -40,7 +40,8 @@ function visData(element) {
 </div>
       <div>
       <div class="product-info">
-        <h2>${element.brand ?? ""}</h2>
+        ${element.brand ? `<h2>${element.brand}</h2>` : ""}
+        <h1>${element.title}</h1>
 
         ${
           harTilbud
