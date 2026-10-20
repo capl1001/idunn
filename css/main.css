@@ -1,8 +1,3 @@
-
-/* ========================================
-   FONTE
-======================================== */
-
 @font-face {
   font-family: instrumentsans;
   src: url("../Fonts/InstrumentSans-VariableFont_wdth,wght.woff2");
@@ -33,6 +28,11 @@ body {
   background-color: var(--background-color);
 }
 
+main{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 a {
   text-decoration: none;
   color: var(--text-color);
@@ -42,9 +42,7 @@ nav ul {
   list-style: none;
 }
 
-/* ========================================
-   HEADER – FÆLLES GRUNDSTRUKTUR
-======================================== */
+/* HEADER*/
 
 header {
   display: flex;
@@ -71,9 +69,7 @@ header nav {
   margin-left: auto;
 }
 
-/* ========================================
-   MOBIL – STANDARDVISNING
-======================================== */
+/* MOBILEFIRST*/
 
 /* Linklisten er skjult, indtil burgeren aktiveres */
 .menu {
@@ -106,7 +102,7 @@ header nav {
   transition: 0.2s linear;
 }
 
-/* Burgerens animation */
+/* Burgerens animation (hver af de tre streger) */
 .burger.active .line:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
@@ -149,9 +145,16 @@ button {
   color: var(--text-color);
 }
 
-/* ========================================
-   DESKTOP – FRA 800 PX
-======================================== */
+/* MANGLER */
+
+/* .tilbageknap{
+}
+
+.filterknap{}
+
+evt sorteringsknap  */
+
+/* DESKTOP */
 
 @media (min-width: 800px) {
 

@@ -5,6 +5,10 @@ body {
   background-color: #efeee7;
 }
 
+main{
+  margin: 0;
+}
+
 header {
     position: absolute;
     top: 0;

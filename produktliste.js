@@ -61,13 +61,23 @@ function filtrer(e) {
   visData(udsnit);
 }
 
+// TILBUDSPRIS - Da vores produkter allesammen har en tilbudspris, har vi valgt kun at vise dem der er over 10% rabat
+
+function tilbudspris(element) {
+  if (element.discountPercentage > 10){
+  return Math.round(element.price - (element.price * element.discountPercentage / 100));
+} else {
+    return element.price;
+  }
+}
+
 // SORTERING
 function sorter(e) {
   const valgt = e.target.textContent;
   if (valgt === "Price low-high") {
-    udsnit.sort((a, b) => a.price - b.price);
+    udsnit.sort((a, b) => tilbudspris(a) - tilbudspris(b));
   } else if (valgt === "Price high-low") {
-    udsnit.sort((a, b) => b.price - a.price);
+    udsnit.sort((a, b) => tilbudspris(b) - tilbudspris(a));
   } else if (valgt === "A-Z") {
     udsnit.sort((a, b) => a.title.localeCompare(b.title));
   } else if (valgt === "Z-A") {
@@ -81,18 +91,29 @@ function sorter(e) {
 function visData(json) {
   visantal.textContent = json.length;
   produktliste.innerHTML = "";
+
   json.forEach((element) => {
+    const pris = tilbudspris(element);
+
     produktliste.innerHTML += `
-            <a class="card" href="produktdetaljer.html?id=${element.id}">
-                <article>
-                    <img 
-                        src="${element.thumbnail}" 
-                        alt="${element.title}"
-                    >
-                    <h3>${element.title}</h3>
-                    <p>${element.price} €</p>
-                </article>
-            </a>
-        `;
+      <a class="card" href="produktdetaljer.html?id=${element.id}">
+        <article>
+          <img
+            src="${element.thumbnail}"
+            alt="${element.title}"
+          >
+          <h3>${element.title}</h3>
+
+          ${element.discountPercentage > 10
+              ? `<p class="tilbudslabel">-${element.discountPercentage.toFixed(0)}%</p>
+                 <p>
+                   <span class="førpris"> ${element.price} €</span>
+                    ${pris} €
+                 </p>`
+              : `<p>${element.price} €</p>`
+          }
+        </article>
+      </a>
+    `;
   });
 }
