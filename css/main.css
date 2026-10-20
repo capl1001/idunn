@@ -1,83 +1,215 @@
-* {
-  margin: 0;
+
+/* ========================================
+   FONTE
+======================================== */
+
+@font-face {
+  font-family: instrumentsans;
+  src: url("../Fonts/InstrumentSans-VariableFont_wdth,wght.woff2");
 }
+
+@font-face {
+  font-family: inter;
+  src: url("../Fonts/Inter-VariableFont_opsz_wght.woff");
+}
+
+/* ========================================
+   GENERELT
+======================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: instrumentsans, sans-serif;
+}
+
 :root {
   --background-color: #ebe5dc;
   --text-color: #000;
+  --color-h2: #4b3021;
 }
-/* Burger Menu */
-.menu {
-  display: none;
+
+body {
+  background-color: var(--background-color);
 }
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
 nav ul {
   list-style: none;
 }
-a {
-  text-decoration: none;
-  color: black;
+
+/* ========================================
+   HEADER – FÆLLES GRUNDSTRUKTUR
+======================================== */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 20px;
 }
+
+header .logo {
+  flex: 0 0 auto;
+}
+
+header .logo img {
+  display: block;
+  max-width: 140px;
+  height: auto;
+}
+
+header nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* ========================================
+   MOBIL – STANDARDVISNING
+======================================== */
+
+/* Linklisten er skjult, indtil burgeren aktiveres */
+.menu {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Burgerknap */
 .burger {
   display: block;
-  background-color: transparent;
-  border: 0;
-  flex: 0 0 auto;
-  margin: 0 20px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: relative;
   z-index: 10;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 20px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 }
+
 .burger .line {
   display: block;
   width: 100%;
   height: 1px;
-  background-color: black;
-  margin-top: 10px;
   margin-bottom: 5px;
+  background-color: black;
   transition: 0.2s linear;
-  z-index: 1;
 }
+
+/* Burgerens animation */
 .burger.active .line:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-  transition: 0.2s linear;
+  transform: translateY(6px) rotate(45deg);
 }
+
 .burger.active .line:nth-child(2) {
   opacity: 0;
-  transition: 0.2s linear;
 }
+
 .burger.active .line:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-  transition: 0.2s linear;
+  transform: translateY(-6px) rotate(-45deg);
 }
+
+/* Mobilmenu – åbnes via JavaScript */
 nav.active .menu {
   display: block;
-  background-color: rgba(255, 255, 255, 0.8);
   position: absolute;
+  top: 40px;
   right: 0;
   width: 200px;
-  height: 500px;
+  min-height: 250px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 9;
 }
+
 nav.active .menu li {
-  margin: 40px 20px;
+  margin: 20px 0;
   text-align: left;
 }
+
 nav.active .menu a {
   font-size: 20px;
   color: #000;
 }
 
-body {
-  margin: 40px;
-  background-color: var(--background-color);
-}
-
-/* Design af general button */
+/* Generelle knapper */
 button {
   background-color: white;
   border: 1px solid black;
   color: var(--text-color);
+}
+
+/* ========================================
+   DESKTOP – FRA 800 PX
+======================================== */
+
+@media (min-width: 800px) {
+
+  /* Headerens elementer fordeles med flex */
+  header {
+    gap: 2rem;
+    padding: 20px 2rem;
+  }
+
+  .menu,
+  nav.active .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 36px;
+    position: static;
+    width: auto;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+  }
+
+  .menu li {
+    margin: 0;
+  }
+
+  .menu a {
+    font-size: 14px;
+  }
+
+  /* Burgeren skjules på desktop */
+  .burger {
+    display: none;
+  }
+
+  /* Hovereffekt på menulinks */
+  .menu a {
+    position: relative;
+  }
+
+  .menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-h2);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+  }
+
+  .menu a:hover {
+    color: var(--color-h2);
+  }
+
+  .menu a:hover::after {
+    transform: scaleX(1);
+  }
 }
