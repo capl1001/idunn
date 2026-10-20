@@ -35,7 +35,7 @@ fetch(endpoint)
       overskrift.textContent = cat;
     } else {
       udsnit = alleData;
-      overskrift.textContent = "Produkter";
+      overskrift.textContent = "Products";
     }
 
     visData(udsnit);

@@ -29,7 +29,7 @@ function visData(element) {
       
       <div class="product-info">
         <h2>${element.brand}</h2>
-        <p class="price">${element.price} $</p>
+        <p class="price">${element.price} €</p>
 
       <div class="accordion">
         <p class="description">${element.description}</p>
