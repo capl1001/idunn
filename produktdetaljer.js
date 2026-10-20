@@ -1,5 +1,4 @@
-
- // Vi henter id fra URL'en
+// Vi henter id fra URL'en
 const id = new URLSearchParams(window.location.search).get("id");
 
 // Vi henter det specifikke produkt fra DummyJSON
@@ -19,10 +18,7 @@ fetch(endpoint)
 
 // Funktion til at beregne tilbudsprisen
 function tilbudspris(element) {
-  return Math.round(
-    element.price -
-      (element.price * element.discountPercentage) / 100
-  );
+  return Math.round(element.price - (element.price * element.discountPercentage) / 100);
 }
 
 // Funktion til at vise dataen på produktdetaljesiden
@@ -33,21 +29,21 @@ function visData(element) {
   const harTilbud = element.discountPercentage > 10;
 
   // Vi beregner kun tilbudsprisen, hvis produktet har tilbud
-  const pris = harTilbud
-    ? tilbudspris(element)
-    : element.price;
+  const pris = harTilbud ? tilbudspris(element) : element.price;
 
   // Vi tilføjer produktets data til vores container
   product.innerHTML += `
     <article class="product-detail">
-      <h1>${element.title}</h1>
+      <div>
 
       <img src="${element.thumbnail}" alt="${element.title}" />
-
+</div>
+      <div>
       <div class="product-info">
         <h2>${element.brand ?? ""}</h2>
 
-        ${harTilbud
+        ${
+          harTilbud
             ? `
               <p class="tilbudslabel">
                 -${element.discountPercentage.toFixed(0)}%
@@ -60,12 +56,33 @@ function visData(element) {
             : `<p class="price">${element.price} €</p>`
         }
 
-        <div class="accordion">
-          <p class="description">${element.description}</p>
+      <article class="info">
+      <details class="accordion">
+        <summary>Specifications</summary>
+        <div> <p>Description: ${element.description}</p> 
+        ${element.dimensions ? `<p>Dimensions: ${element.dimensions.width} x ${element.dimensions.height} x ${element.dimensions.depth}</p>` : ""}
+        <p>Weight: ${element.weight}kg</p>
+        
+        </div>
+        </details>
+        <details class="accordion">
+        <summary>Shipping & Returns</summary>
+        <div> <p>${element.shippingInformation}</p> 
+        <p>${element.returnPolicy}</p>
+        
         </div>
 
-        <button class="buy-button">Add to cart</button>
-      </div>
+        </details>
+        <details class="accordion">
+        <summary>Warranty & Availability</summary>
+        <div> <p>Warranty Information: ${element.warrantyInformation}</p>
+        <p>Availability: ${element.availabilityStatus}</p>
+        </div>
+        </details>
+      </article>
+</div>
+
+      <button class="add-to-cart">Add to cart</button>
     </article>
   `;
 }
