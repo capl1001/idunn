@@ -7,7 +7,7 @@ const cat = new URLSearchParams(window.location.search).get("cat");
 const produktliste = document.querySelector("#produktliste");
 const visantal = document.querySelector("#filtre span");
 const tilbageknap = document.querySelector("#tilbageknap");
-const overskrift = document.querySelector("h2");
+const overskrift = document.querySelector("h1");
 
 // Vi opretter to variabler
 
