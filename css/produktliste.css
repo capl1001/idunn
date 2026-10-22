@@ -10,8 +10,14 @@
     font-family: instrumentsans;
 }
 
-.produktliste h2 {
+.produktliste {
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.produktliste h1 {
     text-transform: uppercase;
+    font-weight: 500;
+    margin: 0;
 }
 
 #produktliste{
@@ -21,6 +27,65 @@
     gap: 1rem;
 }
 
+#filtre {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.filterknap {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #8c8175;
+    border-radius: 999px;
+    background-color: transparent;
+    font-size: 0.8rem;
+}
+
+.filterknap.active {
+    background-color: #301e10;
+    color: white;
+    border-color: #301e10;
+}
+
+#filtre span {
+    margin-left: 0.2rem;
+    font-size: 0.8rem;
+    color: #5c5148;
+}
+
+#sortering {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#sortering button {
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #8c8175;
+    background-color: transparent;
+    font-size: 0.8rem;
+}
+
+#sortering button.active {
+    background-color: #301e10;
+    color: white;
+    border-color: #301e10;
+}
+
+#tilbageknap {
+    display: inline-block;
+    padding: 0;
+    margin-bottom: 1.5rem;
+
+    border: none;
+    background: none;
+
+    color: #301e10;
+    font-size: 0.9rem;
+}
 
 .card{
     display: grid;
@@ -67,5 +132,27 @@ a.card:hover {
   #produktliste {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
+    .produktliste {
+        padding-top: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .produktliste h1 {
+        font-size: 2.5rem;
+    }
+
+    #filtre {
+        gap: 0.7rem;
+    }
+
+    #sortering {
+        gap: 0.5rem;
+    }
+
+    #tilbageknap {
+        margin-bottom: 1.5rem;
+    }
+
 
 }

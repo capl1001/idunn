@@ -41,13 +41,21 @@ fetch(endpoint)
     visData(udsnit);
   });
 
-// FUNKTIONER
-// Vi
+// ====FUNKTIONER====
 
 // FILTRERING
 function filtrer(e) {
   const valgt = e.target.textContent;
 
+  // Vi gør det til regel at alle knapper under vores filtre id, skal være "ikke-aktive", så vi kan lave en regel for den aktive
+    document.querySelectorAll("#filtre button").forEach((knap) => {
+    knap.classList.remove("active");
+  });
+
+  // Bestemmer at vores knap er aktiv, så vi kan lave regler for hvordan den ser ud og arter sig ift de in-active
+  e.target.classList.add("active");
+
+  // Vi laver en regel, der skifter vores overskrift ud med den valgte tekst når man klikker på de forskellige kategorier
   overskrift.textContent = valgt;
   if (valgt === "All") {
     udsnit = alleData;
@@ -74,6 +82,16 @@ function tilbudspris(element) {
 // SORTERING
 function sorter(e) {
   const valgt = e.target.textContent;
+
+    // Vi gør det til regel at alle knapper under vores sortering id, skal være "ikke-aktive", så vi kan lave en regel for den aktive
+
+  document.querySelectorAll("#sortering button").forEach((knap) => {
+    knap.classList.remove("active");
+  });
+
+  // Bestemmer at vores knap er aktiv, så vi kan lave regler for hvordan den ser ud og arter sig ift de in-active
+  e.target.classList.add("active");
+
   if (valgt === "Price low-high") {
     udsnit.sort((a, b) => tilbudspris(a) - tilbudspris(b));
   } else if (valgt === "Price high-low") {
@@ -94,7 +112,7 @@ function visData(json) {
 
   json.forEach((element) => {
     const pris = tilbudspris(element);
-
+// Vi vælger html opbygningen for voress produktkort ved at benytte de valgte properties fra vores Json
     produktliste.innerHTML += `
       <a class="card" href="produktdetaljer.html?id=${element.id}">
         <article>
