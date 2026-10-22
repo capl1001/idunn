@@ -36,7 +36,7 @@ function visData(element) {
     <article class="product-detail">
       <div>
 
-      <img src="${element.thumbnail}" alt="${element.title}" />
+      <img src="${element.images[0]}" alt="${element.title}" />
 </div>
       <div>
       <div class="product-info">
