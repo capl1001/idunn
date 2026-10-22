@@ -3,7 +3,7 @@ const endpoint = "https://dummyjson.com/products?limit=0";
 // Læser kateorien fra URL'en
 const cat = new URLSearchParams(window.location.search).get("cat");
 
-// Vi benytter os af queryselector
+// Vi benytter os af queryselector for at kunne tilføje fx. eventlistener og fortælle hvad der skal ske ved et klik
 const produktliste = document.querySelector("#produktliste");
 const visantal = document.querySelector("#filtre span");
 const tilbageknap = document.querySelector("#tilbageknap");
