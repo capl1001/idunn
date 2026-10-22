@@ -19,25 +19,30 @@ h1 {
   margin-top: 40px;
   align-items: center;
 }
-img {
-  width: 80%;
-  height: auto;
-  object-fit: cover;
-}
+
 
 .img1 {
+   width: 80%;
+  height: auto;
+  object-fit: cover;
   justify-self: center;
   align-self: center;
   height: 300px;
   object-position: center;
 }
 .img2 {
+   width: 80%;
+  height: auto;
+  object-fit: cover;
   justify-self: center;
   align-self: center;
   aspect-ratio: 16 / 9;
   width: 100%;
 }
 .img3 {
+   width: 80%;
+  height: auto;
+  object-fit: cover;
   justify-self: center;
   align-self: center;
   height: 400px;
