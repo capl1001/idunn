@@ -11,3 +11,21 @@ h1 {
   gap: 1rem;
   margin-top: 40px;
 }
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img1 {
+  height: 220px;
+}
+.img2 {
+  height: 300px;
+  width: 100%;
+}
+.img3 {
+  height: 400px;
+  padding-bottom: 40px;
+}
