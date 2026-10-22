@@ -161,6 +161,10 @@ nav.active .menu a {
   color: #000;
 }
 
+.kurvimg{
+  height: 20px;
+}
+
 /* Generelle knapper */
 button {
   background-color: white;
