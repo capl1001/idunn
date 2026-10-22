@@ -20,19 +20,26 @@ h1 {
   align-items: center;
 }
 img {
-  width: 100%;
+  width: 80%;
   height: auto;
   object-fit: cover;
 }
 
 .img1 {
-  height: 220px;
+  justify-self: center;
+  align-self: center;
+  height: 300px;
+  object-position: center;
 }
 .img2 {
-  height: 300px;
+  justify-self: center;
+  align-self: center;
+  aspect-ratio: 16 / 9;
   width: 100%;
 }
 .img3 {
+  justify-self: center;
+  align-self: center;
   height: 400px;
   padding-bottom: 40px;
 }
