@@ -187,6 +187,7 @@ evt sorteringsknap  */
     padding: 20px 2rem;
   }
 
+  /* footerens elementer fordeles med flex og vi benytter nth-child og last-child for at placere teksten korrekt i dekstopview */
   footer {
     flex-direction: row;
     justify-content: space-between;
